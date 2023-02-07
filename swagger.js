@@ -1,6 +1,7 @@
 // importamos las dos depencias que acabamos de instalar
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+require("dotenv").config();
 
 const options = {
   definition: {
@@ -36,11 +37,16 @@ const options = {
 
 const swaggerSpec = swaggerJSDoc(options);
 
+
 const swaggerDocs = (app, port) => {
 
   app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  if(process.env.URL= "http://localhost"){
+      console.log(`Doc V1 disponible en http://localhost:${port}/api/v1/docs`);
+  }else{
+    console.log(`Doc V1 disponible en ${process.env.URL}/api/v1/docs`);
 
-  console.log(`Doc V1 disponible en http://localhost:${port}/api/v1/docs`);
+  }
 };
 
 
