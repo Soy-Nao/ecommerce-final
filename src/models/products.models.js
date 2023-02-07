@@ -8,6 +8,9 @@ const { DataTypes } = require("sequelize");
  *     request_product:
  *       type: object
  *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
  *         name:
  *           type: string
  *           example: Borojó
@@ -71,9 +74,6 @@ const Products = db.define(
     image: {
       type: DataTypes.STRING,
       allowNull: true,
-    },
-    description: {
-      type: DataTypes.STRING,
     },
     availableQty: {
       type: DataTypes.INTEGER,

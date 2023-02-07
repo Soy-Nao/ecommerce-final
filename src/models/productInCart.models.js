@@ -5,24 +5,6 @@ const { DataTypes } = require("sequelize");
  * @openapi
  * components:
  *   schemas:
- *     request_cart:
- *       type: object
- *       properties:
- *         quantity:
- *           type: number
- *           example: 3
- *         price:
- *           type: number
- *           example: 12000
- *         status:
- *           type: boolean
- *           example: true
- *         cartId:
- *           type: number
- *           example: 1
- *         productId:
- *           type: number
- *           example: 1
  *     add_cart:
  *       type: object
  *       properties:
@@ -35,12 +17,6 @@ const { DataTypes } = require("sequelize");
  *         productId:
  *           type: number
  *           example: 1
- *     update_cart:
- *       type: object
- *       properties:
- *         quantity:
- *           type: number
- *           example: 3
  *     securitySchemes:
  *       bearerAuth:
  *         type: http

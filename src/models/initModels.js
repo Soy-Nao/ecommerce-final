@@ -20,19 +20,19 @@ const initModels = () => {
 
   // M:M
 
-  ProductsInOrder.belongsTo(Orders, { foreignKey: "order_id" })
-  Orders.hasMany(ProductsInOrder, { as: "orders", foreignKey: "order_id" })
+  ProductsInOrder.belongsTo(Orders, { as: "productOr",foreignKey: "order_id" })
+  Orders.hasMany(ProductsInOrder, { as: "ordersP", foreignKey: "order_id" })
 
-  ProductsInOrder.belongsTo(Products, { as: "produ", foreignKey: "product_id" })
+  ProductsInOrder.belongsTo(Products, { as: "product", foreignKey: "product_id" })
   Products.hasMany(ProductsInOrder, { as: "prod", foreignKey: "product_id" })
 
   // M:M
 
-  ProductInCart.belongsTo(Cart, { foreignKey: "cart_id" })
-  Cart.hasMany(ProductInCart, { as: "products", foreignKey: "cart_id" })
+  ProductInCart.belongsTo(Cart, { as: "produ", foreignKey: "cart_id" })
+  Cart.hasMany(ProductInCart, { as: "productsInCart", foreignKey: "cart_id" })
 
-  ProductInCart.belongsTo(Products, { foreignKey: "product_id" })
-  Products.hasMany(ProductInCart, {  as: "product", foreignKey: "product_id" })
+  ProductInCart.belongsTo(Products, { as: "product",foreignKey: "product_id" })
+  Products.hasMany(ProductInCart, {  as: "productsInCart", foreignKey: "product_id" })
 
 };
 

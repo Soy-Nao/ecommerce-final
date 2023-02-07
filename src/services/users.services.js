@@ -1,33 +1,40 @@
 const { Users, Cart } = require("../models");
 
-
-class UserServices {
-  static async createUser(user) {
+class UserService {
+  static async createUser(userData) {
     try {
-      
-      const result = await Users.create(user);
-      
-      const createCart = await Cart.create({
+      const { email } = userData;
+      const existingUser = await Users.findOne({ where: {email} });
+      if (existingUser) {
+        throw Error('A user already exists with this email address.');
+      }
+      const user = await Users.create(userData);
+      await Cart.create({
         totalPrice: 0,
-        userId: result.id
+        userId: user.id,
       });
-      return result;
+      return {
+        id: user.id,
+        username: user.username,
+        email: user.email,
+        password: user.password,
+      };
     } catch (error) {
       throw error;
     }
   }
 
-  static async getUser(id) {
+  static async getUser(userId) {
     try {
-      const result = await Users.findOne({
-        where: { id },
-        attributes: ["id", "username", "email"]
+      const user = await Users.findOne({
+        where: { id: userId },
+        attributes: ["id", "username", "email"],
       });
-      return result;
+      return user;
     } catch (error) {
       throw error;
     }
   }
 }
 
-module.exports = UserServices;
+module.exports = UserService;

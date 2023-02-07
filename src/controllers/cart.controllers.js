@@ -9,7 +9,7 @@ const showCart = async (req, res, next) => {
     next({
       status: 400,
       errorContent: error,
-      message: "Algo salio mal, o no hay productos que mostrar. Agrega nuevos productos al carrito",
+      message: "something went wrong, or there are no products to display. Add new products to cart",
     });
   }
 }
@@ -17,13 +17,13 @@ const addProducts = async (req, res, next) => {
   try {
     const { id } = req.params;
     const body = req.body;
-    const result = await CartServices.addCart(id, body);
+    const result = await CartServices.addProductToCart(id, body);
     res.status(201).json(result);
   } catch (error) {
     next({
       status: 400,
       errorContent: error,
-      message: "Algo salio mal",
+      message: "something went wrong",
     });
   }
 }

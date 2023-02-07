@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const { json } = require("sequelize");
 require("dotenv").config();
 
 const authenticate = (req, res, next) => {

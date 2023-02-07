@@ -30,7 +30,7 @@ const createProducts = async (req, res, next) => {
     next({
       status: 400,
       errorContent: error,
-      message: "Algo salio mal",
+      message: "something went wrong",
     });
   }
 }

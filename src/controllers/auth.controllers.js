@@ -13,7 +13,7 @@ const userLogin = async (req, res, next) => {
       result.token = token;
       res.status(201).json(result);
     } else {
-      res.status(400).json({ message: "Información inválida" });
+      res.status(400).json({ message: "Invalid information" });
     }
   } catch (error) {
     next({

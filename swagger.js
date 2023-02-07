@@ -6,9 +6,9 @@ const options = {
   definition: {
     openapi: "3.0.0", 
     info: {
-      title: "MyShop",
+      title: "Mi Eccomerce",
       version: "1.0.0",
-      description: "API for the sale of products online.",
+      description: "API for the sale of products online of Mi Ecommerce.",
     },
   },
   apis: [

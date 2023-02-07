@@ -9,7 +9,7 @@ const { addProducts, showCart } = require("../controllers");
  *   post:
  *     security: 
  *       - bearerAuth: []
- *     summary: Add a product to the shopping Cart
+ *     summary: ✅Add a product to the shopping Cart
  *     tags: [Cart]
  *     requestBody:
  *       description: Add a new product to the shopping Cart
@@ -36,7 +36,7 @@ const { addProducts, showCart } = require("../controllers");
  *               properties:
  *                 status:
  *                   type: string
- *                   example: OK
+ *                   example: ✅
  *                 data:
  *                   type: array
  *                   items:
@@ -44,7 +44,7 @@ const { addProducts, showCart } = require("../controllers");
  *   get:
  *     security:
  *       - bearerAuth: []
- *     summary: See the data of a cart in the app
+ *     summary: 👀 See the data of a cart in the app
  *     tags: [Cart]
  *     parameters:
  *       - in: path
@@ -64,11 +64,11 @@ const { addProducts, showCart } = require("../controllers");
  *               properties:
  *                 status:
  *                   type: string
- *                   example: OK
+ *                   example: ✅
  *                 data:
  *                   type: array
  *                   items:
- *                     $ref: "#/components/schemas/request_cart"
+ *                     $ref: "#/components/schemas/request_productsInCart"
  */
 
 

@@ -46,7 +46,7 @@ const {
  *                     $ref: "#/components/schemas/request_product"
  * /api/v1/products:
  *   get:
- *     summary: Display the complete list of products greater than 0.
+ *     summary: 👀 Display the complete list of products greater than 0.
  *     tags: [Products]
  *     responses:
  *       200:

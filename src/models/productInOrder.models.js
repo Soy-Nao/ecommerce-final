@@ -11,24 +11,44 @@ const { DataTypes } = require("sequelize");
  *         username:
  *           type: string
  *           example: Nao
- *         totalPrice:
- *           type: number
- *           example: 4000
- *         quantity:
- *           type: number
- *           example: 6
- *         price:
- *           type: number
- *           example: 23000
- *         status:
- *           type: boolean
- *           example: true
- *         orderId:
- *           type: number
- *           example: 1
- *         productId:
- *           type: string
- *           example: 1
+ *         order:
+ *           type: object
+ *           properties:
+ *             id:
+ *               type: number
+ *               example: 6000
+ *             totalPrice:
+ *               type: number
+ *               example: 23000
+ *             status:
+ *               type: boolean
+ *               example: true
+ *             userId:
+ *               type: number
+ *               example: 1
+ *             prodctsInOrder:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   orderId:
+ *                     type: number
+ *                     example: 1
+ *                   productId:
+ *                     type: number
+ *                     example: 2
+ *                   quantity:
+ *                     type: number
+ *                     example: 3
+ *                   price:
+ *                     type: number
+ *                     example: 7000
+ *                   name:
+ *                     type: string
+ *                     example: Pan
+ *                   image:
+ *                     type: string
+ *                     example: http://imagen.com/tuImagen.jpg
  *     securitySchemes:
  *       bearerAuth:
  *         type: http
@@ -51,10 +71,6 @@ const ProductsInOrder = db.define(
     },
     price: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    images: {
-      type: DataTypes.STRING,
       allowNull: true,
     },
     status: {

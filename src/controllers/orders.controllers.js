@@ -1,35 +1,35 @@
 const { OrdersServices } = require("../services");
 
 
-const createOrder = async (req, res, next) => {
+const postCreateOrder = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await OrdersServices.postOrder(id);
+    const result = await OrdersServices.postCreateOrder(id);
     res.status(201).json(result);
 
   } catch (error) {
     next({
       status: 400,
       errorContent: error,
-      message: "Algo salio mal",
+      message: "something went wrong",
     });
   }
 };
-const getOrder = async (req, res, next) => {
+const getOrdersByUser = async (req, res, next) => {
   try {
     const { id } = req.params
-    const result = await OrdersServices.getOrder(id);
+    const result = await OrdersServices.getOrdersByUser(id);
     res.json(result);
   } catch (error) {
     next({
       status: 400,
       errorContent: error,
-      message: "Algo salio mal",
+      message: "something went wrong",
     });
   }
 };
 
 module.exports = {
-  createOrder,
-  getOrder,
+  postCreateOrder,
+  getOrdersByUser,
 };

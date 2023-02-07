@@ -19,7 +19,7 @@ const userRegister = async (req, res, next) => {
     next({
       status: 400,
       errorContent: error,
-      message: "Faltan datos",
+      message: "Missing data",
     });
   }
 };
@@ -33,7 +33,7 @@ const getUser = async (req, res, next) => {
     next({
       status: 400,
       errorContent: error,
-      message: "Algo salio mal",
+      message: "something went wrong",
     });
   }
 };
