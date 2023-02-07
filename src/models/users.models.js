@@ -18,9 +18,6 @@ const bcrypt = require("bcrypt");
  *         email:
  *           type: string
  *           example: nao@gmail.com
- *         password:
- *           type: string
- *           example: $2b$08$S8Q6rX5StsUmsL7tpLqMegpk.TPhiV0iUGcoHJof/zcmyd.FM2kS
  *     register:
  *       type: object
  *       properties:
